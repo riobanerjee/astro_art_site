@@ -12,7 +12,7 @@ def add_image(i,image_path,authors,description,tags):
     extension = image_name.split(".")[-1]
     image_name_new = "{:06d}.{}".format(i,extension)
     img = Image.open(image)
-    height, width = img.size
+    width, height = img.size
     shutil.copy(image_path,image_path.replace(image_name,image_name_new).replace("Img","app/static/upload"))
 
     metadata_img = {

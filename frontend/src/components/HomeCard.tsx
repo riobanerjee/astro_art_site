@@ -7,14 +7,20 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+import { Separator } from "@/components/ui/separator"
+
 
 interface Props {
     apiRoute: string;
+    query: string;
+    authors: [];
+    tags: [];
+    date: [];  
 }
 
-const HomeCard = ({apiRoute}: Props) => {
+const HomeCard = ({apiRoute, query, authors, tags, date}: Props) => {
   return (
-    <Card>
+    <Card className="card-shadow">
       <CardHeader>
         <CardTitle> </CardTitle>
         <CardDescription>An example search result</CardDescription>
@@ -23,7 +29,17 @@ const HomeCard = ({apiRoute}: Props) => {
         <div className="card-layout">
           <div className="card-text">
             <div className="search-text">
-                Card Content Blah Blah
+                <qry> Query input </qry> : {query}
+            </div>
+            <Separator className="my-4" />
+            <div className="meta-text">
+            <p> <qry> Authors </qry> : {authors} </p>
+            </div>
+            <div className="meta-text">
+            <p> <qry> Tags </qry> : {tags} </p>
+            </div>
+            <div className="meta-text">
+            <p> <qry> Date </qry> : {date} </p>
             </div>
           </div>
           <div className="card-image">
@@ -36,3 +52,5 @@ const HomeCard = ({apiRoute}: Props) => {
 };
 
 export default HomeCard;
+
+

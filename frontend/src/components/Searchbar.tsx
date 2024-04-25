@@ -8,10 +8,10 @@ interface Props {
 
 const SearchBar = ({apiRoute}: Props) => {
   return (
-    <div className="flex w-full max-w-sm items-center space-x-2">
-      <Input type="query" placeholder="e.g. Galaxies" />
+    <div className="flex w-full max-w-sm items-center space-x-2 ">
+      <Input className="input-shadow" type="query" placeholder="e.g. Galaxies" />
       <Link to='/results'>
-          <Button key="home-search" type="submit">
+          <Button className="input-shadow" key="home-search" type="submit">
             Go
           </Button>
       </Link>

@@ -6,14 +6,13 @@ from datetime import datetime
 import shutil
 import os
 
-def add_image(i,image_path,authors,description,tags):
-    image_folder = image.replace("\\","/")
-    image_name = image_folder.split("/")[-1]
+def add_image(index,image_path,authors,description,tags):
+    image_name = image_path.split("/")[-1]
     extension = image_name.split(".")[-1]
     image_name_new = "{:06d}.{}".format(i,extension)
     img = Image.open(image)
     width, height = img.size
-    shutil.copy(image_path,image_path.replace(image_name,image_name_new).replace("Img","app/static/upload"))
+    shutil.copy(image_path,"app/static/upload/"+image_name_new)
 
     metadata_img = {
             "filename": image_name_new,

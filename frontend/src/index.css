@@ -96,9 +96,9 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end; /* Aligns child to the bottom */
-  height: 20vh; /* Sets the container's height to half the viewport height */
+  height: 10vh; /* Sets the container's height to half the viewport height */
   width: 100%; /* Optional: makes the div span the full width of the viewport */
-  align-items: bottom;
+  align-items: center;
   justify-content: center;
 }
 
@@ -118,7 +118,6 @@
   display: flex;
   width: 100%;
   height: 100%;
-  padding-bottom: 5%;
 }
 
 .card-text, .card-image {
@@ -131,8 +130,6 @@
   flex-direction: column;
   justify-content: center;  /* Center vertically */
   text-align: left;  /* Align text to the left */
-  padding-left: 10%;
-  padding-right: 10%;
 }
 
 .card-image {
@@ -146,32 +143,48 @@
   height: 50;  /* Keep the image aspect ratio intact */
 }
 
+.card-image-sub img {
+  width: 100%;  /* Limit the image width to not exceed the container */
+  height: 50;  /* Keep the image aspect ratio intact */
+}
+
 /* CSS class for black background with white text */
 .search-text {
-  background-color: white;
-  color: black;
+  background-color: black;
+  color: white;
   padding: 1rem;
-  padding-left: 2rem;
-  border: 2px solid grey;  /* Adds a black border */
-  border-radius: 10px;      /* Adds rounded corners */
 }
 
 .meta-text {
-  background-color: white;
+  background-color: grey;
   color: black;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 2rem;
+  padding: 1rem;
 }
 
-qry {
-  color: grey;
+/* CSS for the Gallery Page */
+.gallery-page {
+  padding: 20px;
 }
 
-.card-shadow {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates a 3x3 grid layout */
+  grid-gap: 20px; /* Space between cards */
 }
 
-.input-shadow {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+.gallery-card {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 15px;
+  text-align: center;
 }
+
+.gallery-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.searchbar {
+  margin-bottom: 20px; /* Space between the search bar and the grid */
+}
+

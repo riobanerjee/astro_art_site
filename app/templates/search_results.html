@@ -1,0 +1,24 @@
+<!-- app/templates/search_results.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Search Results</h1>
+    <p>Showing results for: {{ query }}</p>
+    <div class="image-gallery">
+        {% for result in search_results %}
+            <div class="image-item">
+                <img src="{{ result['full_image_url'] }}" alt="{{ result['title'] }}">
+                <p>Title: {{ result['title'] }}</p>
+                <p>Tags: {{ result['tags'] }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

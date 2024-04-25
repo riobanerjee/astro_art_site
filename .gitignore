@@ -1,0 +1,45 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore node modules
+node_modules/
+
+# Ignore Python virtual environments
+venv/
+
+# Ignore application specific files
+*.log
+*.cache
+*.pyc
+*.pyo
+*.pyd
+*.pid
+*.patch
+*.diff
+*.swp
+*.bak
+*.tmp
+
+# Ignore database files
+*.db
+*.sqlite
+
+# Ignore pycache
+__pycache__/
+
+# Ignore IDE specific files
+.idea/
+*.iml
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sln.ide/
+
+# Ignore build and distribution directories
+dist/
+build/
+
+migrations/
+instance/
+static/upload/

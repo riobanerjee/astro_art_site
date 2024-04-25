@@ -1,0 +1,158 @@
+@tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  @layer base {
+    :root {
+      --background: 0 0% 100%;
+      --foreground: 222.2 84% 4.9%;
+
+      --card: 0 0% 100%;
+      --card-foreground: 222.2 84% 4.9%;
+
+      --popover: 0 0% 100%;
+      --popover-foreground: 222.2 84% 4.9%;
+
+      --primary: 222.2 47.4% 11.2%;
+      --primary-foreground: 210 40% 98%;
+
+      --secondary: 210 40% 96.1%;
+      --secondary-foreground: 222.2 47.4% 11.2%;
+
+      --muted: 210 40% 96.1%;
+      --muted-foreground: 215.4 16.3% 46.9%;
+
+      --accent: 210 40% 96.1%;
+      --accent-foreground: 222.2 47.4% 11.2%;
+
+      --destructive: 0 84.2% 60.2%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 214.3 31.8% 91.4%;
+      --input: 214.3 31.8% 91.4%;
+      --ring: 222.2 84% 4.9%;
+
+      --radius: 0.5rem;
+    }
+
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --border: 217.2 32.6% 17.5%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
+  }
+
+  @layer base {
+    * {
+      @apply border-border;
+    }
+    body {
+      @apply bg-background text-foreground;
+    }
+  }
+  
+.centered-content {
+  display: flex;
+  justify-content: center; /* This centers the child horizontally */
+  height: 100%; /* Optional: it also centers vertically if you want */
+  align-items: center; /* Optional: it also centers vertically if you want */
+}
+
+.half-height-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Aligns child to the bottom */
+  height: 20vh; /* Sets the container's height to half the viewport height */
+  width: 100%; /* Optional: makes the div span the full width of the viewport */
+  align-items: center;
+  justify-content: bottom;
+}
+
+.quarter-height-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Aligns child to the bottom */
+  height: 20vh; /* Sets the container's height to half the viewport height */
+  width: 100%; /* Optional: makes the div span the full width of the viewport */
+  align-items: bottom;
+  justify-content: center;
+}
+
+
+/* Optional: Ensure the SearchBar takes up the necessary space or is properly centered */
+.search-bar {
+  width: 100%; /* Adjust depending on your SearchBar styling needs */
+}
+
+.white-space {
+  width: 100%; /* Ensures the div takes the full width of its container */
+  height: 10vh;
+  background-color: transparent; /* Set to 'transparent' or any color you like */
+}
+
+.card-layout {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.card-text, .card-image {
+  flex: 1;  /* Each takes up half of the flex container */
+  padding: 0px;  /* Add padding for some space inside the divisions */
+}
+  
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* Center vertically */
+  text-align: left;  /* Align text to the left */
+}
+
+.card-image {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;  /* Center vertically */
+}
+
+.card-image img {
+  width: 50%;  /* Limit the image width to not exceed the container */
+  height: 50;  /* Keep the image aspect ratio intact */
+}
+
+/* CSS class for black background with white text */
+.search-text {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+}
+
+.meta-text {
+  background-color: grey;
+  color: black;
+  padding: 1rem;
+}
+

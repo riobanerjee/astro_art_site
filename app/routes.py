@@ -44,20 +44,18 @@ def upload_file():
 
 
 
-@app.route('/search', methods=['GET', 'POST'])
+@app.route('/search', methods=['POST'])
 def search():
-    if request.method == 'POST':
-        query = request.form['query']
-        search_results = []
+    # if request.method == 'POST':
+    query = request.form['query']
+    search_results = []
 
-        # Fetch images from the database based on the search query
-        images = Image.query.filter(Image.title.like(f'%{query}%') | Image.tags.like(f'%{query}%')).all()
+    # Fetch images from the database based on the search query
+    images = Image.query.filter(Image.title.like(f'%{query}%') | Image.tags.like(f'%{query}%')).all()
 
-        # Construct full image URLs
-        for image in images:
-            full_image_url = url_for('static', filename='upload/' + image.filename, _external=True)
-            search_results.append({'full_image_url': full_image_url, 'title': image.title, 'tags': image.tags})
+    # Construct full image URLs
+    for image in images:
+        full_image_url = url_for('static', filename='upload/' + image.filename, _external=True)
+        search_results.append({'full_image_url': full_image_url, 'title': image.title, 'tags': image.tags})
 
-        return render_template('search_results.html', query=query, search_results=search_results)
-
-    return redirect(url_for('index'))
+    return jsonify({'query': query, 'search_results': search_results})

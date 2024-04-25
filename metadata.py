@@ -13,14 +13,14 @@ def add_image(i,image_path,authors,description,tags):
     image_name_new = "{:06d}.{}".format(i,extension)
     img = Image.open(image)
     height, width = img.size
-    shutil.copy(image_path,image_path.replace(image_name,image_name_new).replace("Img","Img_renamed"))
+    shutil.copy(image_path,image_path.replace(image_name,image_name_new).replace("Img","app/static/upload"))
 
     metadata_img = {
             "filename": image_name_new,
             "title": image_name.split(".")[-2],
             "extension": extension,
             "description": description,
-            "url": image_folder,
+            "url": "app/static/upload"+image_name_new,
             "authors": authors,
             "image_size": {"height": height, "width": width},
             "uploaded_at": str(datetime.now()),
@@ -30,6 +30,7 @@ def add_image(i,image_path,authors,description,tags):
     return metadata_img
 
 if __name__ == '__main__':
+    print("Saving metadata...")
     images = glob("Img/*")
     images_metadata = []
     for i, image in enumerate(images):

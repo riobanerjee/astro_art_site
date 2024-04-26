@@ -1,0 +1,121 @@
+{
+  "images": [
+    {
+      "title": "corner",
+      "extension": "png",
+      "description": "Dummy description 0.",
+      "path": "upload/000000.png",
+      "author": "Author0",
+      "dimensions": {
+        "height": 2172,
+        "width": 1612
+      },
+      "uploaded_at": "2024-04-25 15:03:07.539596",
+      "tags": ["tag0", "tag1", "tag2"]
+    },
+    {
+      "title": "retrieve0",
+      "extension": "png",
+      "description": "Dummy description 1.",
+      "path": "upload/000001.png",
+      "author": "Author1",
+      "dimensions": {
+        "height": 2500,
+        "width": 1580
+      },
+      "uploaded_at": "2024-04-25 15:03:07.539596",
+      "tags": ["tag3", "tag4", "tag5"]
+    },
+    {
+      "title": "retrieve1",
+      "extension": "png",
+      "description": "Dummy description 2.",
+      "path": "upload/000002.png",
+      "author": "Author2",
+      "dimensions": {
+        "height": 2560,
+        "width": 1582
+      },
+      "uploaded_at": "2024-04-25 15:03:07.539596",
+      "tags": ["tag6", "tag7", "tag8"]
+    },
+    {
+      "title": "retrieve2",
+      "extension": "png",
+      "description": "Dummy description 3.",
+      "path": "upload/000003.png",
+      "author": "Author3",
+      "dimensions": {
+        "height": 2566,
+        "width": 1600
+      },
+      "uploaded_at": "2024-04-25 15:03:07.543136",
+      "tags": ["tag9", "tag10", "tag11"]
+    },
+    {
+      "title": "retrieve3",
+      "extension": "png",
+      "description": "Dummy description 4.",
+      "path": "upload/000004.png",
+      "author": "Author4",
+      "dimensions": {
+        "height": 2518,
+        "width": 1576
+      },
+      "uploaded_at": "2024-04-25 15:03:07.543136",
+      "tags": ["tag12", "tag13", "tag14"]
+    },
+    {
+      "title": "transit",
+      "extension": "png",
+      "description": "Dummy description 5.",
+      "path": "upload/000005.png",
+      "author": "Author5",
+      "dimensions": {
+        "height": 2570,
+        "width": 1586
+      },
+      "uploaded_at": "2024-04-25 15:03:07.543136",
+      "tags": ["tag15", "tag16", "tag17"]
+    },
+    {
+      "title": "transit_split",
+      "extension": "png",
+      "description": "Dummy description 6.",
+      "path": "upload/000006.png",
+      "author": "Author6",
+      "dimensions": {
+        "height": 2578,
+        "width": 1606
+      },
+      "uploaded_at": "2024-04-25 15:03:07.543136",
+      "tags": ["tag18", "tag19", "tag20"]
+    },
+    {
+      "title": "transm_geom",
+      "extension": "png",
+      "description": "Dummy description 7.",
+      "path": "upload/000007.png",
+      "author": "Author7",
+      "dimensions": {
+        "height": 2740,
+        "width": 578
+      },
+      "uploaded_at": "2024-04-25 15:03:07.543136",
+      "tags": ["tag21", "tag22", "tag23"]
+    },
+    {
+      "title": "transm_spec",
+      "extension": "png",
+      "description": "Dummy description 8.",
+      "path": "upload/000008.png",
+      "author": "Author8",
+      "dimensions": {
+        "height": 2572,
+        "width": 1580
+      },
+      "uploaded_at": "2024-04-25 15:03:07.543136",
+      "tags": ["tag24", "tag25", "tag26"]
+    }
+  ]
+}

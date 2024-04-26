@@ -1,25 +1,25 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
 import os
+from flask_cors import CORS
 import json
 from datetime import datetime
 import random
 import string
 from PIL import Image
-from difflib import SequenceMatcher
 
 import uuid
 
 app = Flask(__name__)
 CORS(app)
 
-UPLOAD_FOLDER = '../data/media/'
+UPLOAD_FOLDER = 'uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 def generate_unique_filename(existing_filenames, original_filename):
     filename, extension = os.path.splitext(original_filename)
     while True:
+        # Generate a random filename with the same extension
         new_filename = str(uuid.uuid4())[:8] + extension
         if new_filename not in existing_filenames:
             return new_filename
@@ -27,7 +27,6 @@ def generate_unique_filename(existing_filenames, original_filename):
 
 @app.route('/submit', methods=['POST'])
 def submit_form():
-
     # Get form data
     data = request.form
 
@@ -37,6 +36,7 @@ def submit_form():
     # Save photo to uploads directory
     if 'file' in request.files:
         file = request.files['file']
+        print("file", file.filename)
         if file.filename != '':
 
             original_filename = file.filename
@@ -51,6 +51,7 @@ def submit_form():
             filename = new_filename
 
             form_data['file_path'] = file_path
+
             # form_data['file_size'] = os.path.getsize(file_path)
             form_data['extension'] = os.path.splitext(filename)[1][1:]
             form_data['dimensions'] = datetime.now().isoformat()
@@ -61,14 +62,19 @@ def submit_form():
                 tags_string = request.form['tags']
                 tags_list = [tag.strip() for tag in tags_string.split(',')]
                 form_data['tags'] = tags_list
+    else:
+        print("No file.")
 
-    json_file_path = '../data/meta.json'
+    json_file_path = 'data.json'
 
     if os.path.exists(json_file_path):
 
         try:
             with open(json_file_path, 'r') as file:
                 data = json.load(file)
+                print("AAA")
+                print(data.keys())
+                print("AAA")
 
                 if "images" not in data.keys():
                     data["images"] = []
@@ -87,43 +93,8 @@ def submit_form():
     with open(json_file_path, 'w') as f:
         json.dump(data, f, indent=4)
 
-    return jsonify({'message': 'Submission successful.'})
-
-
-@app.route('/search', methods=['GET'])
-def search():
-    search_string = request.args.get('query', '').lower()
-
-    # Debugging: Log the value of query
-    print("Query:", search_string)
-
-    with open('../data/meta.json', 'r') as f:
-        meta_data = json.load(f)
-
-    # print(meta_data)
-
-    print("DEBUG1")
-
-    best_match = None
-    best_score = 0
-
-    print("DEBUG2")
-
-    for image in meta_data['images']:
-        # Calculate similarity score based on title and description
-        title_score = SequenceMatcher(
-            None, search_string.lower(), image['title'].lower()).ratio()
-        description_score = SequenceMatcher(
-            None, search_string.lower(), image.get('description', '').lower()).ratio()
-        # Taking average of title and description scores
-        total_score = (title_score + description_score) / 2
-
-        if total_score > best_score:
-            best_score = total_score
-            best_match = image
-
-    return jsonify(best_match)
+    return jsonify({'message': 'Form submitted successfully'})
 
 
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(debug=True)

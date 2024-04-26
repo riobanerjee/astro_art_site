@@ -5,14 +5,13 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-
+} from "@/components/ui/card";
 
 interface Props {
-    apiRoute: string;
+  apiRoute: string;
 }
 
-const HomeCard = ({apiRoute}: Props) => {
+const HomeCard = ({ apiRoute }: Props) => {
   return (
     <Card>
       <CardHeader>
@@ -21,10 +20,12 @@ const HomeCard = ({apiRoute}: Props) => {
       </CardHeader>
       <CardContent>
         <div className="card-layout">
-          <div className="card-text">
-          </div>
+          <div className="card-text"></div>
           <div className="card-image-sub">
-            <img src="https://github.com/SpaceMeerkat/sharkchasers/blob/main/static/cards/Blacktip%20Shark.jpg?raw=true" alt="Description" />
+            <img
+              src="https://github.com/SpaceMeerkat/sharkchasers/blob/main/static/cards/Blacktip%20Shark.jpg?raw=true"
+              alt="Description"
+            />
           </div>
         </div>
       </CardContent>

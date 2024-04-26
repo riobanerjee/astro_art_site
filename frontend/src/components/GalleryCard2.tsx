@@ -17,24 +17,26 @@ interface Props {
   date: [];
 }
 
-const HomeCard = ({ apiRoute, query, authors, tags, date }: Props) => {
+const HomeCard = ({
+  apiRoute,
+  query,
+  authors,
+  tags,
+  date,
+  description,
+}: Props) => {
   return (
     <Card className="card-shadow">
       <CardHeader>
         <CardTitle> </CardTitle>
-        <CardDescription>An example search result</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="card-layout">
           <div className="card-text">
-            <div className="search-text">
-              <qry> Query input </qry> : {query}
-            </div>
-            <Separator className="my-4" />
             <div className="meta-text">
               <p>
                 {" "}
-                <qry> Authors </qry> : {authors}{" "}
+                <qry> description </qry> : {description}{" "}
               </p>
             </div>
             <div className="meta-text">

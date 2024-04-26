@@ -1,6 +1,5 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
-import "../assets/style/Submit.css";
 
 interface FormData {
   tags: string;
@@ -84,6 +83,7 @@ const ImageUploadForm: React.FC = () => {
       formDataToSend.append("description", formData.description);
       formDataToSend.append("author", formData.authorName);
       formDataToSend.append("file", formData.images[0]); // Assuming only one image is selected
+
       const response = await axios.post(
         "http://127.0.0.1:5000/submit",
         formDataToSend,
